@@ -7,15 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>INVESTOMEDIA | Premium Learning Files</title>
 
-    <style>
-        #orderSection {
-            display: none;
-            background: white;
-            padding: 20px;
-            border-radius: 40px;
-            margin-top: 20px;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -61,45 +52,59 @@
                 <img src="img/products/free.jpeg" alt="Free e-book">
                 <div class="overlay">
                     <button class="btn-view" data-img="img/products/free.jpeg">View</button>
-                    <!-- <a onclick="showOrder()" class="btn-buy">Get for Free</a> -->
-                     <button onclick="showOrder()" class="btn-buy"> Get For Free</button>
+                    <a href="#" class="free" data-id="free">Get for free</a>
                 </div>
             </div>
             <p><span>Free</span>  The beginner's steps guide to digital products</p>
         </div>
 
         <div class="images">
-            <div class="img-wrapper">
-                <img src="img/products/insta.png" alt="How to sell on Instagram">
-                <div class="overlay">
-                    <button class="btn-view" data-img="img/products/insta.png">View</button>
-                    <a href="#" class="btn-buy">Buy Now</a>
-                </div>
-            </div>
-            <p><span>₱ 499</span> How to sell on Instagram</p>
+    <div class="img-wrapper">
+        <img src="img/products/insta.png" alt="How to sell on Instagram">
+        <div class="overlay">
+            <button class="btn-view" data-img="img/products/insta.png">View</button>
+            <button class="btn-buy" 
+                data-id="insta"
+                data-name="How to sell on Instagram"
+                data-price="499">
+                Buy Now
+            </button>
         </div>
+    </div>
+    <p><span>₱ 499</span> How to sell on Instagram</p>
+</div>
 
-        <div class="images">
-            <div class="img-wrapper">
-                <img src="img/products/strength.png" alt="Strength in the Word e-Book">
-                <div class="overlay">
-                    <button class="btn-view" data-img="img/products/strength.png">View</button>
-                    <a href="#" class="btn-buy">Buy Now</a>
-                </div>
-            </div>
-            <p><span>₱ 499</span> Strength in the Word e-Book</p>
+<div class="images">
+    <div class="img-wrapper">
+        <img src="img/products/strength.png" alt="Strength in the Word e-Book">
+        <div class="overlay">
+            <button class="btn-view" data-img="img/products/strength.png">View</button>
+            <button class="btn-buy" 
+                data-id="strength"
+                data-name="Strength in the Word e-Book"
+                data-price="299">
+                Buy Now
+            </button>
         </div>
+    </div>
+    <p><span>₱ 299</span> Strength in the Word e-Book</p>
+</div>
 
-        <div class="images">
-            <div class="img-wrapper">
-                <img src="img/products/oxford.png" alt="Oxford English Grammar">
-                <div class="overlay">
-                    <button class="btn-view" data-img="img/products/oxford.png">View</button>
-                    <a href="#" class="btn-buy">Buy Now</a>
-                </div>
-            </div>
-            <p><span>₱ 499</span> Oxford English Grammar</p>
+<div class="images">
+    <div class="img-wrapper">
+        <img src="img/products/oxford.png" alt="Oxford English Grammar">
+        <div class="overlay">
+            <button class="btn-view" data-img="img/products/oxford.png">View</button>
+            <button class="btn-buy" 
+                data-id="oxford"
+                data-name="Oxford English Grammar"
+                data-price="799">
+                Buy Now
+            </button>
         </div>
+    </div>
+    <p><span>₱ 799</span> Oxford English Grammar</p>
+</div>
             
         <!-- <div class="images placeholder">
             <div class="img-wrapper"><div class="empty-slot">Coming Soon</div></div>

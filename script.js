@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // order section
-function showOrder() {
+/*function showOrder() {
     let orderBox = document.getElementById('orderSection');
 
     orderBox.style.display = 'block';
@@ -67,4 +67,47 @@ function placeOrder() {
     } else {
         alert('Choose a payment method');
     }
+}*/
+
+function buyProduct(name, price) {
+    const product = {
+        name: name,
+        price: price
+    };
+
+    // Save to browser
+    localStorage.setItem("selectedProduct", JSON.stringify(product));
+
+    // Redirect to payment page
+    window.location.href = "payment.html";
 }
+
+document.querySelectorAll(".free").forEach(btn => {
+    btn.addEventListener("click", () => {
+
+        const product = {
+            id: btn.dataset.id,
+            name: "The beginner's steps guide to digital products",
+            price: 0
+        };
+
+        localStorage.setItem("paidProduct", JSON.stringify(product));
+
+        window.location.href = "download.html";
+    });
+});
+
+document.querySelectorAll(".btn-buy").forEach(btn => {
+    btn.addEventListener("click", () => {
+
+        const product = {
+            id: btn.dataset.id,
+            name: btn.dataset.name,
+            price: btn.dataset.price
+        };
+
+        localStorage.setItem("selectedProduct", JSON.stringify(product));
+
+        window.location.href = "payment.html";
+    });
+});

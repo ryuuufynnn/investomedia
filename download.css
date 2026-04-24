@@ -1,0 +1,33 @@
+body {
+    font-family: Arial;
+    background: #f4f7f6;
+}
+
+.container {
+    max-width: 400px;
+    margin: 100px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#downloadBtn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: green;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+}
+
+.btn {
+    background-color: green;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}

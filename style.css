@@ -21,6 +21,7 @@ body {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -158,6 +159,14 @@ nav {
     margin-bottom: 0;
 }
 
+#orderSection {
+    display: none;
+    background: white;
+    padding: 20px;
+    border-radius: 40px;
+    margin-top: 20px;
+}
+
 .products-section {
     display: flex;
     overflow-x: auto;
@@ -171,7 +180,7 @@ nav {
 }
 
 .products-section span {
-    color:rgb(37, 196, 61);
+    color: rgb(37, 196, 61);
     font-size: 17px;
     font-weight: 500;
 }
@@ -258,6 +267,14 @@ nav {
     border-radius: 30px;
     font-size: 15px;
     font-weight: none;
+}
+
+.free {
+    text-decoration: none;
+    padding: 12px 20px 12px 20px;
+    border-radius: 30px;
+    color: white;
+    background-color: #01a014;
 }
 
 /* Reviews Section (White Background) */
@@ -372,11 +389,11 @@ footer a {
     margin: 0 auto;
     transition: 0.5s;
     margin-bottom: 20px;
-} 
+}
 
 footer a:hover {
     background: red;
-    
+
 }
 
 footer p {
@@ -481,5 +498,3 @@ footer p {
         padding: 10px 20px 10px 20px;
     }
 }
-
-
