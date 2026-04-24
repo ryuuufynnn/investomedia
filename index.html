@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>INVESTOMEDIA | Premium Learning Files</title>
+
+    <style>
+        #orderSection {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 40px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">
+                <a href="#"><img src="img/products/logo.jpeg" alt="Logo" id="logo"></a>
+                <h2><span>INVEST</span>OMEDIA</h2>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#product">Products</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contacts">Contacts</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+    <section class="hero-section" id="home">
+        <div class="hero-content">
+            <h3>WELCOME TO</h3>
+            <h1><span>INVEST</span>OMEDIA</h1>
+            <p>High-quality digital bundles to level up your skills.</p>
+            <a href="#product" class="main-btn">Buy Now</a>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <h2>About us</h2>
+        <p>At Investomedia, our mission is to empower individuals on their journey through the world of digital products. We offer a wide range of high-quality digital products focused on enhancing your knowledge and skills in investing. From online courses and e-books to software tools, each product is designed to help you achieve your financial goals.
+        We believe in making information and resources accessible to everyone, which is why we provide innovative and user-friendly solutions for both beginners and experienced investors. At Investomedia, we understand that the right education and tools are key to successful investing.
+        Build your future with Investomedia—wherever you are.</p>
+    </section>
+
+    <h1 id="products-h1">Featured Products</h1>
+    <section class="products-section" id="product">
+        <div class="images">
+            <div class="img-wrapper">
+                <img src="img/products/free.jpeg" alt="Free e-book">
+                <div class="overlay">
+                    <button class="btn-view" data-img="img/products/free.jpeg">View</button>
+                    <!-- <a onclick="showOrder()" class="btn-buy">Get for Free</a> -->
+                     <button onclick="showOrder()" class="btn-buy"> Get For Free</button>
+                </div>
+            </div>
+            <p><span>Free</span>  The beginner's steps guide to digital products</p>
+        </div>
+
+        <div class="images">
+            <div class="img-wrapper">
+                <img src="img/products/insta.png" alt="How to sell on Instagram">
+                <div class="overlay">
+                    <button class="btn-view" data-img="img/products/insta.png">View</button>
+                    <a href="#" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+            <p><span>₱ 499</span> How to sell on Instagram</p>
+        </div>
+
+        <div class="images">
+            <div class="img-wrapper">
+                <img src="img/products/strength.png" alt="Strength in the Word e-Book">
+                <div class="overlay">
+                    <button class="btn-view" data-img="img/products/strength.png">View</button>
+                    <a href="#" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+            <p><span>₱ 499</span> Strength in the Word e-Book</p>
+        </div>
+
+        <div class="images">
+            <div class="img-wrapper">
+                <img src="img/products/oxford.png" alt="Oxford English Grammar">
+                <div class="overlay">
+                    <button class="btn-view" data-img="img/products/oxford.png">View</button>
+                    <a href="#" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+            <p><span>₱ 499</span> Oxford English Grammar</p>
+        </div>
+            
+        <!-- <div class="images placeholder">
+            <div class="img-wrapper"><div class="empty-slot">Coming Soon</div></div>
+            <p><span>TBD</span> New Product</p>
+        </div>
+        <div class="images placeholder">
+            <div class="img-wrapper"><div class="empty-slot">Coming Soon</div></div>
+            <p><span>TBD</span> New Product</p>
+        </div>
+        <div class="images placeholder">
+            <div class="img-wrapper"><div class="empty-slot">Coming Soon</div></div>
+            <p><span>TBD</span> New Product</p>
+        </div>
+        <div class="images placeholder">
+            <div class="img-wrapper"><div class="empty-slot">Coming Soon</div></div>
+            <p><span>TBD</span> New Product</p>
+        </div>
+        <div class="images placeholder">
+            <div class="img-wrapper"><div class="empty-slot">Coming Soon</div></div>
+            <p><span>TBD</span> New Product</p>
+        </div>
+        <div class="images placeholder">
+            <div class="img-wrapper"><div class="empty-slot">Coming Soon</div></div>
+            <p><span>TBD</span> New Product</p>
+        </div>
+        <div class="images placeholder">
+            <div class="img-wrapper"><div class="empty-slot">Coming Soon</div></div>
+            <p><span>TBD</span> New Product</p>
+        </div>
+        <div class="images placeholder">
+            <div class="img-wrapper"><div class="empty-slot">Coming Soon</div></div>
+            <p><span>TBD</span> New Product</p>
+        </div>
+        <div class="images placeholder">
+            <div class="img-wrapper"><div class="empty-slot">Coming Soon</div></div>
+            <p><span>TBD</span> New Product</p>
+        </div>
+        <div class="images placeholder">
+            <div class="img-wrapper"><div class="empty-slot">Coming Soon</div></div>
+            <p><span>TBD</span> New Product</p>
+        </div>
+        <div class="images placeholder">
+            <div class="img-wrapper"><div class="empty-slot">Coming Soon</div></div>
+            <p><span>TBD</span> New Product</p>
+        </div> -->
+    </section>
+
+    <section id="orderSection">
+        <h3>Order Summary</h3>
+        <p><strong>Product</strong> Strength</p>
+        <p><strong>Price</strong> P 499</p>
+
+        <h4>Choose Payment Method</h4>
+        <label><input type="radio" name="payment" value="gcash">GCash</label>
+
+        <button onclick="placeOrder()">Place Order</button>
+    </section>
+
+    <section class="reviews-section" id="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="reviews-grid">
+            <img src="img/products/review1.jpg" alt="Review 1">
+            <img src="img/products/review2.jpg" alt="Review 2">
+            <img src="img/products/review3.jpg" alt="Review 3">
+            <img src="img/products/review4.jpg" alt="Review 4">
+        </div>
+    </section>
+
+    <section class="contact-section" id="contacts">
+        <h2>Connect With Us</h2>
+        <div class="social-container">
+            <a href="https://www.facebook.com/profile.php?id=100090626494977&mibextid=ZbWKwL"><i class="fab fa-facebook"></i> <span>Facebook</span></a>
+            <a href="https://www.instagram.com/yulecissusma"><i class="fab fa-instagram"></i> <span>Instagram</span></a>
+            <a href="http://tiktok.com/@filexis23"><i class="fab fa-tiktok"></i> <span>TikTok</span></a>
+            <a href="https://www.youtube.com/@Allaboutsuccess2k23"><i class="fab fa-youtube"></i> <span>YouTube</span></a>
+            <a href="mailto:susmafilexis@gmail.com"><i class="fa-solid fa-envelope"></i> <span>Email</span></a>
+            <p <i class="fas fa-phone"></i>  09481701092</p>
+        </div>
+    </section>
+
+    <div class="modal" id="imgModal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+</main>
+
+<footer>
+    <div>
+        <a href="https://ryu-dev.vercel.app" target="_blank">Developer's Info</a>
+        <p>Content copyright © 2026 INVESTOMEDIA</p>
+
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
