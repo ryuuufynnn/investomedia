@@ -63,7 +63,7 @@ async function handleSuccess(orderID) {
     localStorage.setItem("paidOrderID", orderID);
 
     try {
-        const response = await fetch("https://investomedia-production.up.railway.app//verify-payment", {
+        const response = await fetch("https://investomedia-production.up.railway.app/verify-payment", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -131,7 +131,7 @@ waitForPaypal(() => {
     showLoader();
 
     try {
-        const response = await fetch("investomedia-backend-production.up.railway.app/capture-order", {
+        const response = await fetch("https://investomedia-production.up.railway.app/capture-order", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
