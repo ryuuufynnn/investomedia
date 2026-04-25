@@ -33,7 +33,7 @@ if (files[product.id]) {
     downloadBtn.style.display = "inline-block";
 
     downloadBtn.addEventListener("click", () => {
-        window.location.href = `https://investomedia-production.up.railway.app/download/${downloadParam}`;
+        window.location.href = `https://investomedia.onrender.com/download/${downloadParam}`;
     });
 
 } else {
