@@ -266,15 +266,16 @@ nav {
     padding: 12px 20px 12px 20px;
     border-radius: 30px;
     font-size: 15px;
-    font-weight: none;
+    font-weight: 600;
 }
 
 .free {
     text-decoration: none;
-    padding: 12px 20px 12px 20px;
+    padding: 8px 20px 8px 20px;
     border-radius: 30px;
     color: white;
     background-color: #01a014;
+    font-weight: bold;
 }
 
 /* Reviews Section (White Background) */
@@ -285,10 +286,6 @@ nav {
     margin-top: 0;
     scroll-padding-top: 5px;
 }
-
-/* .review-section h2 {
-    margin-top: 10px;
-} */
 
 .reviews-grid {
     scroll-padding-bottom: 50px;
@@ -304,7 +301,7 @@ nav {
     height: auto;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
-    box-shadow: 0 0 0 1px rgb(113, 174, 195);
+    box-shadow: 0 0 8px rgba(0, 0, 0, .6);
 }
 
 /* Contact Section */
@@ -313,6 +310,7 @@ nav {
     color: white;
     padding: 60px 20px;
     text-align: center;
+    padding-bottom: 20px;
 }
 
 .contact-section .fa-phone {
@@ -382,7 +380,7 @@ footer a {
     text-align: center;
     display: block;
     background: transparent;
-    padding: 10px 10px 10px 10px;
+    padding: 8px 10px 10px 10px;
     border-radius: 30px;
     border: white 2px solid;
     width: 150px;

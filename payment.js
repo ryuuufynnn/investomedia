@@ -4,18 +4,6 @@ const product = JSON.parse(localStorage.getItem("selectedProduct"));
 document.getElementById("productName").textContent = product.name;
 document.getElementById("productPrice").textContent = product.price;
 
-/*function payNow() {
-    const selected = document.querySelector('input[name="payment"]:checked');
-
-    if (!selected) {
-        alert("Select payment method");
-        return;
-    }
-
-    if (selected.value === "paypal") {
-        document.getElementById("paypal-button-container").style.display = "block";
-    }
-}*/
 function payNow() {
     const selected = document.querySelector('input[name="payment"]:checked');
 

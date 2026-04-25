@@ -26,5 +26,6 @@ if (files[product.id]) {
     downloadBtn.href = files[product.id];
 } else {
     console.warn("Unknown product ID:", product.id);
-    downloadBtn.href = "ebooks/insta.png"; // fallback
+   // downloadBtn.href = "ebooks/insta.png"; // fallback
+   downloadBtn.alert('unknown product'); // alternative than downloading a insta.png;
 }
