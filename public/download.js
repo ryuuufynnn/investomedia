@@ -33,7 +33,7 @@ if (files[product.id]) {
     downloadBtn.style.display = "inline-block";
 
     downloadBtn.addEventListener("click", () => {
-        window.location.href = `/api/download/${orderID}`;
+        window.location.href = `http://localhost:3000/download/${orderID}`;
     });
 
 } else {

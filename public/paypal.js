@@ -63,7 +63,7 @@ async function handleSuccess(orderID) {
     localStorage.setItem("paidOrderID", orderID);
 
     try {
-        const response = await fetch("/api/verify-payment", {
+        const response = await fetch("http://localhost:3000/verify-payment", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -125,26 +125,41 @@ waitForPaypal(() => {
         // ===============================
         // APPROVE (BULLETPROOF VERSION)
         // ===============================
-        onApprove: (data, actions) => {
+        onApprove: async (data) => {
 
-            console.log("APPROVED ORDER:", data.orderID);
-            showLoader();
+    console.log("APPROVED ORDER:", data.orderID);
+    showLoader();
 
-            return actions.order.capture()
+    try {
+        const response = await fetch("http://localhost:3000/capture-order", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                orderID: data.orderID,
+                productId: product.id
+            })
+        });
 
-                .then((details) => {
-                    console.log("CAPTURE SUCCESS:", details);
+        const result = await response.json();
 
-                    return handleSuccess(data.orderID);
-                })
+        if (result.success) {
+            console.log("CAPTURED & VERIFIED ✅");
 
-                .catch((err) => {
-                    console.warn("CAPTURE FAILED (fallback used):", err);
+            localStorage.setItem("paidProduct", JSON.stringify(product));
+            localStorage.setItem("paidOrderID", data.orderID);
 
-                    // 🔥 fallback (important sa issue mo)
-                    return handleSuccess(data.orderID);
-                });
-        },
+            window.location.href = "download.html";
+        } else {
+            alert("Payment failed.");
+        }
+
+    } catch (err) {
+        console.error("ERROR:", err);
+        alert("Server error.");
+    }
+},
 
         // ===============================
         // CANCEL
