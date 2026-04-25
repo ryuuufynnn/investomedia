@@ -168,6 +168,11 @@ app.post("/verify-payment", (req, res) => {
 // ===============================
 // DOWNLOAD ROUTE
 // ===============================
+
+app.get("/ping", (req, res) => {
+    res.send("pong");
+});
+
 app.get("/download/:orderID", (req, res) => {
     const orderID = req.params.orderID;
 
