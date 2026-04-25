@@ -131,7 +131,7 @@ waitForPaypal(() => {
     showLoader();
 
     try {
-        const response = await fetch("https://investomedia-production.up.railway.app/capture-order", {
+        const response = await fetch("investomedia-backend-production.up.railway.app/capture-order", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
