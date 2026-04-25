@@ -41,3 +41,17 @@ button {
     border-radius: 10px;
     cursor: pointer;
 }
+
+ a {
+    padding: 12px 25px;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 10px;
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+ }
