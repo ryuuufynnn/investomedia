@@ -53,7 +53,7 @@ const productFiles = {
 // ROOT TEST
 // ===============================
 app.get("/", (req, res) => {
-    res.send("Backend running 🚀");
+    res.send("Backend is alive ✅");
 });
 
 // ===============================
@@ -215,6 +215,6 @@ app.get("/download/:orderID", (req, res) => {
 // ===============================
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
     console.log("🚀 Server running on port " + PORT);
 });
