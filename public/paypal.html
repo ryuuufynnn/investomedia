@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay with PayPal</title>
+    <link rel="stylesheet" href="paypal.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Pay with PayPal</h2>
+
+    <p><strong>Product:</strong> <span id="productName"></span></p>
+    <p><strong>Price:</strong> ₱ <span id="productPrice"></span></p>
+
+    <div id="paypal-button-container"></div>
+</div>
+
+<!-- ========================= -->
+<!-- PAYPAL SDK CONFIG -->
+<!-- ========================= -->
+<script>
+    // ===============================
+    // 🔥 SWITCH MODE HERE
+    // ===============================
+    //const isLive = false; 
+    // false = SANDBOX (testing)
+    // true  = LIVE (real money)
+
+    // ===============================
+    // 🔑 PAYPAL CLIENT IDs
+    // ===============================
+    const isLive = false;
+
+const PAYPAL_CLIENT_ID = {
+    sandbox: "ARfbGN30i9kbDQhVP5ubH0yoHhvP_dKjbqxQj5Et7Ynh9AR5Gw49TQ2BIziMd7fjoaVQ_HmLVBV9Romc", // ✅ sandbox
+    live: "Ac3mWeki2Y1jErrowdTgeS6lKN30beZr9i54dDWUYgJ49Tle18ymFKPtw06xUQ2BlfKooaiS_zbyq6fk" // live
+};
+
+
+    // ===============================
+    // 🚀 LOAD PAYPAL SDK
+    // ===============================
+    const clientId = isLive 
+        ? PAYPAL_CLIENT_ID.live 
+        : PAYPAL_CLIENT_ID.sandbox;
+
+    const paypalScript = document.createElement("script");
+    paypalScript.src = `https://www.paypal.com/sdk/js?client-id=ARfbGN30i9kbDQhVP5ubH0yoHhvP_dKjbqxQj5Et7Ynh9AR5Gw49TQ2BIziMd7fjoaVQ_HmLVBV9Romc&currency=PHP&intent=capture&disable-funding=credit,card`;
+
+    paypalScript.onload = () => {
+        const script = document.createElement("script");
+        script.src = "paypal.js";
+        document.body.appendChild(script);
+    };
+
+    document.body.appendChild(paypalScript);
+</script>
+
+</body>
+</html>
