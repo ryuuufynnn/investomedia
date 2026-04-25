@@ -63,7 +63,7 @@ async function handleSuccess(orderID) {
     localStorage.setItem("paidOrderID", orderID);
 
     try {
-        const response = await fetch("http://localhost:3000/verify-payment", {
+        const response = await fetch("https://investomedia-production.up.railway.app//verify-payment", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
