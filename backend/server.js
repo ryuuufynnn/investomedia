@@ -8,12 +8,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ===============================
-// CONFIG
-// ===============================
-const isLive = false;
+// config
+const isLive = false; // set true if realmoney na;
 
-// 🔑 PAYPAL CONFIG
+// PAYPAL CONFIG
 const PAYPAL_CONFIG = {
     sandbox: {
         clientId: "ARfbGN30i9kbDQhVP5ubH0yoHhvP_dKjbqxQj5Et7Ynh9AR5Gw49TQ2BIziMd7fjoaVQ_HmLVBV9Romc",
@@ -37,9 +35,7 @@ const PAYPAL_BASE_URL = isLive
     ? "api-m.paypal.com"
     : "api-m.sandbox.paypal.com";
 
-// ===============================
-// TEMP DATABASE
-// ===============================
+// temporary db;
 let paidUsers = [];
 
 const productFiles = {
@@ -49,11 +45,9 @@ const productFiles = {
     oxford: "oxford.png"
 };
 
-// ===============================
-// ROOT TEST
-// ===============================
+// root test;
 app.get("/", (req, res) => {
-    res.send("Backend is alive ✅");
+    res.send("Backend is alive");
 });
 
 // ===============================
