@@ -1,13 +1,15 @@
 {
+  "version": 2,
   "rewrites": [
-    { "source": "/", "destination": "/public/html/index.html" },
-    { "source": "/index.html", "destination": "/public/html/index.html" },
-    { "source": "/payment.html", "destination": "/public/html/payment.html" },
-    { "source": "/download.html", "destination": "/public/html/download.html" },
-    { "source": "/gcash.html", "destination": "/public/html/gcash.html" },
-    { "source": "/paypal.html", "destination": "/public/html/paypal.html" },
-    { "source": "/css/:path*", "destination": "/public/css/:path*" },
-    { "source": "/js/:path*", "destination": "/public/js/:path*" },
-    { "source": "/img/:path*", "destination": "/public/img/:path*" }
+    { "source": "/", "destination": "/html/index.html" },
+    { "source": "/index.html", "destination": "/html/index.html" },
+    { "source": "/payment.html", "destination": "/html/payment.html" },
+    { "source": "/download.html", "destination": "/html/download.html" },
+    { "source": "/gcash.html", "destination": "/html/gcash.html" },
+    { "source": "/paypal.html", "destination": "/html/paypal.html" },
+    { "source": "/api/(.*)", "destination": "/api/index.js" },
+    { "source": "/css/:path*", "destination": "/css/:path*" },
+    { "source": "/js/:path*", "destination": "/js/:path*" },
+    { "source": "/img/:path*", "destination": "/img/:path*" }
   ]
 }

@@ -3,7 +3,7 @@ const product = JSON.parse(localStorage.getItem("selectedProduct"));
 
 const BACKEND_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
     ? "http://localhost:3000"
-    : "https://investomedia-1.onrender.com";
+    : "/api";
 
 if (!product) {
     alert("No product found. Redirecting...");
