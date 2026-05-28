@@ -1,42 +1,164 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 0;
-    padding: 0;
-    height: 100vh;
-    background-color: aliceblue;
-}
-
-.coming-soon {
-    /* padding: 40px 40px 40px 40px; */
-    width: 400px;
-    background-color: green;
-    /* padding-top: 50px; */
-    padding: 0;
-    border-radius: 30px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, .2);
-}
-
-.coming-soon h2{
-    text-align: center;
-    padding: 50px 50px 50px 50px;
-    margin: 40px 40px 40px 40px;
-    /* margin: 150px 50px 150px 430px; */
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(147, 220, 134);
-    border-radius: 20px;
+    background:
+        radial-gradient(circle at top, rgba(0, 168, 107, 0.28), transparent 34%),
+        linear-gradient(180deg, #dffcf1 0%, #effff9 48%, #d8f7ea 100%);
+    color: #0f5132;
 }
 
-.coming-soon a {
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
+.gcash-page {
+    width: min(920px, calc(100vw - 32px));
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    overflow: hidden;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 160, 90, 0.16);
+    box-shadow: 0 24px 70px rgba(0, 72, 36, 0.16);
+    backdrop-filter: blur(18px);
+}
+
+.gcash-brand {
+    padding: 42px;
+    background:
+        linear-gradient(160deg, rgba(0, 179, 122, 0.98), rgba(0, 128, 96, 0.96)),
+        url("../img/gcash.png") center/cover no-repeat;
     color: white;
-    background: transparent;
-    border: 2px solid white;
-    padding: 10px 20px 10px 20px;
-    margin: 0 40px 40px 40px;
-    border-radius: 30px;
-    text-align: center;
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.gcash-brand::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent 55%);
+    pointer-events: none;
+}
+
+.brand-top,
+.brand-bottom {
+    position: relative;
+    z-index: 1;
+}
+
+.brand-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.16);
+    width: fit-content;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+.brand-badge img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.gcash-brand h1 {
+    margin: 18px 0 10px;
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    line-height: 0.95;
+}
+
+.gcash-brand p {
+    margin: 0;
+    max-width: 28ch;
+    font-size: 1.05rem;
+    opacity: 0.9;
+}
+
+.gcash-swoosh {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+}
+
+.gcash-swoosh span {
+    width: 54px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.gcash-actions {
+    padding: 42px;
+    background: rgba(255, 255, 255, 0.72);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.gcash-actions h2 {
+    margin: 0 0 14px;
+    font-size: 1.7rem;
+    color: #075b3f;
+}
+
+.gcash-actions ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #245645;
+    line-height: 1.7;
+}
+
+.gcash-actions .btn-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+
+.gcash-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    padding: 12px 18px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gcash-actions a:hover {
+    transform: translateY(-1px);
+}
+
+.back-link {
+    color: #075b3f;
+    border: 1px solid rgba(7, 91, 63, 0.16);
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.primary-link {
+    color: white;
+    background: linear-gradient(135deg, #00b07a, #00714e);
+    box-shadow: 0 16px 30px rgba(0, 144, 96, 0.24);
+}
+
+@media (max-width: 820px) {
+    .gcash-page {
+        grid-template-columns: 1fr;
+    }
+
+    .gcash-brand {
+        min-height: 360px;
+    }
 }

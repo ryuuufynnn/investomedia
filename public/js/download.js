@@ -42,9 +42,8 @@ if (files[product.id]) {
         if (files[product.id].startsWith("http")) {
             window.location.href = files[product.id];
         } else {
-            const tokenQuery = downloadToken ? `?token=${encodeURIComponent(downloadToken)}` : "";
-            const productQuery = `&productId=${encodeURIComponent(product.id)}`;
-            window.location.href = `${BACKEND_URL}/download/${downloadParam}${tokenQuery}${productQuery}`;
+            const tokenQuery = downloadToken ? `&token=${encodeURIComponent(downloadToken)}` : "";
+            window.location.href = `${BACKEND_URL}/download/${downloadParam}?productId=${encodeURIComponent(product.id)}${tokenQuery}`;
         }
     });
 

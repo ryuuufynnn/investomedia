@@ -1,6 +1,7 @@
 body {
-    font-family: Arial;
+    font-family: Arial, Helvetica, sans-serif;
     background: #f4f7f6;
+    margin: 0;
 }
 
 .container {
@@ -23,14 +24,31 @@ body {
     display: flex;
     justify-content: space-around;
     margin: 20px 0;
+    gap: 18px;
+    flex-wrap: wrap;
 }
 
 .payment-card {
     cursor: pointer;
+    display: grid;
+    place-items: center;
+    padding: 14px;
+    border-radius: 16px;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    min-width: 120px;
+}
+
+.payment-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(0, 128, 0, 0.22);
 }
 
 .payment-card img {
     width: 100px;
+    background: transparent;
+    display: block;
 }
 
 button {
@@ -55,3 +73,7 @@ button {
     text-decoration: none;
     display: block;
  }
+
+.payment-card input {
+    margin-bottom: 10px;
+}

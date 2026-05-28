@@ -1,4 +1,6 @@
 const crypto = require("crypto");
+const fs = require("fs");
+const path = require("path");
 
 const TOKEN_SECRET = "investomedia-download-token";
 
@@ -18,6 +20,16 @@ function verifyToken(orderID, productId, token) {
   return token === expected;
 }
 
+function sendFile(res, filePath, fileName) {
+  if (!fs.existsSync(filePath)) {
+    return res.status(404).send("File not found");
+  }
+
+  res.setHeader("Content-Type", "application/pdf");
+  res.setHeader("Content-Disposition", `attachment; filename="${fileName}"`);
+  fs.createReadStream(filePath).pipe(res);
+}
+
 module.exports = async (req, res) => {
   const { orderID } = req.query;
   const token = req.query.token;
@@ -31,8 +43,7 @@ module.exports = async (req, res) => {
     const file = productFiles[productId];
     if (!file) return res.status(404).send("File not found");
     if (file.startsWith("http")) return res.redirect(file);
-    res.writeHead(302, { Location: `/backend/ebooks/${encodeURIComponent(file)}` });
-    return res.end();
+    return sendFile(res, path.join(process.cwd(), "backend", "ebooks", file), file);
   }
 
   const productId = req.query.productId;
@@ -43,7 +54,5 @@ module.exports = async (req, res) => {
   const file = productFiles[productId];
   if (!file) return res.status(404).send("File not found");
   if (file.startsWith("http")) return res.redirect(file);
-
-  res.writeHead(302, { Location: `/backend/ebooks/${encodeURIComponent(file)}` });
-  return res.end();
+  return sendFile(res, path.join(process.cwd(), "backend", "ebooks", file), file);
 };
