@@ -7,7 +7,6 @@
     { "source": "/download.html", "destination": "/html/download.html" },
     { "source": "/gcash.html", "destination": "/html/gcash.html" },
     { "source": "/paypal.html", "destination": "/html/paypal.html" },
-    { "source": "/api/(.*)", "destination": "/api/index.js" },
     { "source": "/css/:path*", "destination": "/css/:path*" },
     { "source": "/js/:path*", "destination": "/js/:path*" },
     { "source": "/img/:path*", "destination": "/img/:path*" }
