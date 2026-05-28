@@ -9,7 +9,7 @@ const BACKEND_URL = window.location.hostname === "localhost" || window.location.
 // VALIDATE
 if (!product) {
     alert("No purchase found");
-    window.location.href = "../html/index.html";
+    window.location.href = "index.html";
 }
 
 // DISPLAY NAME
