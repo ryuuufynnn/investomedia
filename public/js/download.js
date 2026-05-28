@@ -4,7 +4,7 @@ const orderID = localStorage.getItem("paidOrderID");
 
 const BACKEND_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
     ? "http://localhost:3000"
-    : "https://investomedia.onrender.com";
+    : "https://investomedia-1.onrender.com";
 
 // VALIDATE
 if (!product) {
