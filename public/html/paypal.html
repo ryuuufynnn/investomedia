@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pay with PayPal</title>
-    <link rel="stylesheet" href="paypal.css">
+    <link rel="stylesheet" href="../css/paypal.css">
 </head>
 <body>
 
@@ -17,20 +17,9 @@
     <div id="paypal-button-container"></div>
 </div>
 
-<!-- ========================= -->
-<!-- PAYPAL SDK CONFIG -->
-<!-- ========================= -->
+<!-- paypal sdk config -->
 <script>
-    // ===============================
-    // 🔥 SWITCH MODE HERE
-    // ===============================
-    //const isLive = false; 
-    // false = SANDBOX (testing)
-    // true  = LIVE (real money)
-
-    // ===============================
-    // 🔑 PAYPAL CLIENT IDs
-    // ===============================
+    // paypal client id;
     const isLive = false;
 
 const PAYPAL_CLIENT_ID = {
@@ -39,9 +28,7 @@ const PAYPAL_CLIENT_ID = {
 };
 
 
-    // ===============================
-    // 🚀 LOAD PAYPAL SDK
-    // ===============================
+   // load paypal sdk;
     const clientId = isLive 
         ? PAYPAL_CLIENT_ID.live 
         : PAYPAL_CLIENT_ID.sandbox;
@@ -51,7 +38,7 @@ const PAYPAL_CLIENT_ID = {
 
     paypalScript.onload = () => {
         const script = document.createElement("script");
-        script.src = "paypal.js";
+        script.src = "../js/paypal.js";
         document.body.appendChild(script);
     };
 

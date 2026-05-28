@@ -21,7 +21,6 @@ body {
         opacity: 0;
         transform: translateY(10px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -30,6 +29,7 @@ body {
 
 
 /* Header & Nav */
+
 header {
     background: #01a014;
     padding: 10px 0;
@@ -80,10 +80,12 @@ nav {
     color: #ffd700;
 }
 
+
 /* Hero Section */
+
 .hero-section {
     height: 85vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/products/background-for-hero.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/public/img/products/background-for-hero.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -127,7 +129,9 @@ nav {
     transform: scale(1.05);
 }
 
+
 /* about-section properties */
+
 .about-section {
     background-color: #e4fffc;
     margin: 20px 20px 20px 20px;
@@ -149,10 +153,11 @@ nav {
 .about-section p {
     text-align: justify;
     padding: 5px 30px 40px 30px;
-
 }
 
+
 /* Products Section */
+
 #products-h1 {
     text-align: center;
     padding-top: 40px;
@@ -278,7 +283,9 @@ nav {
     font-weight: bold;
 }
 
+
 /* Reviews Section (White Background) */
+
 .reviews-section {
     background: transparent;
     padding: 20px 20px;
@@ -304,7 +311,9 @@ nav {
     box-shadow: 0 0 8px rgba(0, 0, 0, .6);
 }
 
+
 /* Contact Section */
+
 .contact-section {
     background: #1a1a1a;
     color: white;
@@ -317,7 +326,6 @@ nav {
     display: block;
     font-size: 15px;
     padding-top: 9px;
-
 }
 
 .social-container {
@@ -339,7 +347,9 @@ nav {
     color: #01a014;
 }
 
+
 /* Modal */
+
 .modal {
     display: none;
     position: fixed;
@@ -367,11 +377,12 @@ nav {
     cursor: pointer;
 }
 
+
 /* footer-section */
+
 footer {
     background-color: #1a1a1a;
     color: white;
-
 }
 
 footer a {
@@ -391,15 +402,18 @@ footer a {
 
 footer a:hover {
     background: red;
-
 }
 
 footer p {
     text-align: center;
 }
 
+
 /* responsiveness properties */
+
+
 /* Responsive Hamburger */
+
 .hamburger {
     display: none;
     background: none;
@@ -429,7 +443,6 @@ footer p {
         border-radius: 3px;
         background-color: transparent;
     }
-
     .nav-menu {
         display: none;
         position: absolute;
@@ -446,19 +459,15 @@ footer p {
         padding-left: 20px;
         backdrop-filter: blur(15px);
     }
-
     .nav-menu.active {
         display: flex;
     }
-
     .nav-menu a {
         margin: 10px 0;
     }
-
     .hero-content h1 {
         font-size: 2.5rem;
     }
-
     /* footer a {
         color: white;
         text-decoration: none;
@@ -472,16 +481,13 @@ footer p {
     .contact-section span {
         display: none;
     }
-
     .fa-phone {
         display: block;
     }
-
     footer a {
         width: 100px;
         font-size: 10px;
     }
-
     footer p {
         font-size: 10px;
     }
@@ -491,7 +497,6 @@ footer p {
     .hero-section p {
         font-size: 15px;
     }
-
     .hero-section .main-btn {
         padding: 10px 20px 10px 20px;
     }

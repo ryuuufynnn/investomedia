@@ -13,11 +13,11 @@ const isLive = false; // set true if realmoney na;
 
 // PAYPAL CONFIG
 const PAYPAL_CONFIG = {
-    sandbox: {
+    sandbox: { // for paypal sandbox (demo money);
         clientId: "ARfbGN30i9kbDQhVP5ubH0yoHhvP_dKjbqxQj5Et7Ynh9AR5Gw49TQ2BIziMd7fjoaVQ_HmLVBV9Romc",
         secret: "ECDcZTKD1PEGbQozeFpaklSEoF3UDnoN1P-MPLDNUYQ51UUGYKw-sTEWUgcTQ9Cmsy9kl_Tn8ysFrEOz"
     },
-    live: {
+    live: { // real money;
         clientId: "Ac3mWeki2Y1jErrowdTgeS6lKN30beZr9i54dDWUYgJ49Tle18ymFKPtw06xUQ2BlfKooaiS_zbyq6fk",
         secret: "EDfrSwVJYl3tCmzt1rk7N_yqr-eo1wey8IbOqPtTB7Rpeo4byuspSzuPq16MDnsM_bz0bZztFsjxJh03"
     }
@@ -39,10 +39,11 @@ const PAYPAL_BASE_URL = isLive
 let paidUsers = [];
 
 const productFiles = {
-    free: "free.jpeg",
-    insta: "insta.png",
-    strength: "strength.png",
-    oxford: "oxford.png"
+    free: "BEGINNER STEP BY STEP GUIDE.pdf_20260407_001358_0000.pdf",
+    insta: "How to Sell on Instagram The Ultimate Guide.pdf",
+    strength: "https://drive.google.com/drive/u/1/folders/10FgRWYxiXXDEoXps76ObCrwT4nCICPg-",
+    oxford: "https://drive.google.com/drive/folders/1e5BXBDWSXpHGavbpWs-H6TdIHzUPBNh9",
+    facebook: "https://docs.google.com/document/d/1KpPDsFkEdoBJbqUqoFSBQTH7NW_epToGpVrQJxfO-iY/edit?usp=drivesdk"
 };
 
 // root test;
@@ -50,9 +51,7 @@ app.get("/", (req, res) => {
     res.send("Backend is alive");
 });
 
-// ===============================
-// GET ACCESS TOKEN
-// ===============================
+// get access token
 function getAccessToken() {
     return new Promise((resolve, reject) => {
         const data = "grant_type=client_credentials";
@@ -92,9 +91,7 @@ function getAccessToken() {
     });
 }
 
-// ===============================
-// CAPTURE ORDER (SERVER SIDE)
-// ===============================
+// capture order (order side);
 app.post("/capture-order", async (req, res) => {
     const { orderID, productId } = req.body;
 
@@ -118,7 +115,7 @@ app.post("/capture-order", async (req, res) => {
             response.on("end", () => {
                 const json = JSON.parse(data);
 
-                console.log("CAPTURE RESPONSE:", json);
+                console.log("CAPTURE RESPONSE:", json); // print sa console;
 
                 if (json.status === "COMPLETED") {
                     paidUsers.push({ orderID, productId });
@@ -142,9 +139,7 @@ app.post("/capture-order", async (req, res) => {
     }
 });
 
-// ===============================
-// VERIFY PAYMENT (fallback)
-// ===============================
+// verify payment (fallback side);
 app.post("/verify-payment", (req, res) => {
     const { orderID, productId } = req.body;
 
@@ -159,10 +154,8 @@ app.post("/verify-payment", (req, res) => {
     return res.json({ success: true });
 });
 
-// ===============================
-// DOWNLOAD ROUTE
-// ===============================
 
+// download route
 app.get("/ping", (req, res) => {
     res.send("pong");
 });
@@ -178,6 +171,10 @@ app.get("/download/:orderID", (req, res) => {
         const file = productFiles[productId];
 
         if (!file) return res.status(404).send("File not found");
+
+        if (file.startsWith("http")) {
+            return res.redirect(file);
+        }
 
         return res.download(
             path.join(__dirname, "ebooks", file),
@@ -198,17 +195,19 @@ app.get("/download/:orderID", (req, res) => {
         return res.status(404).send("File not found");
     }
 
+    if (file.startsWith("http")) {
+        return res.redirect(file);
+    }
+
     res.download(
         path.join(__dirname, "ebooks", file),
         file
     );
 });
 
-// ===============================
-// START SERVER (FIXED FOR RAILWAY)
-// ===============================
+// taga start ng server (fixed railway);
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, "0.0.0.0", () => {
-    console.log("🚀 Server running on port " + PORT);
+    console.log("Server running on port " + PORT);
 });

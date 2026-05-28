@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ===============================
-    // 1. HAMBURGER MENU
-    // ===============================
+    // hamburger menu
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
 
@@ -16,9 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ===============================
-    // 2. IMAGE MODAL
-    // ===============================
+    // image modal
     const modal = document.getElementById('imgModal');
     const modalImg = document.getElementById('modalImg');
     const closeBtn = document.querySelector('.close-modal');
@@ -39,9 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === modal) modal.style.display = 'none';
     });
 
-    // ===============================
-    // 3. AUTO SLIDER
-    // ===============================
+    // auto slider every 5 secs;
     const slider = document.querySelector('.products-section');
 
     setInterval(() => {
@@ -54,9 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, 5000);
 
-    // ===============================
-    // 4. FREE PRODUCT
-    // ===============================
+    // free product;
     document.querySelectorAll(".free").forEach(btn => {
         btn.addEventListener("click", (e) => {
             e.preventDefault();
@@ -67,18 +59,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 price: 0
             };
 
-            // ✅ Save as PAID (since free)
+            // Save as PAID (since free)
             localStorage.setItem("paidProduct", JSON.stringify(product));
             localStorage.setItem("paidOrderID", "FREE_" + product.id);
 
-            // 🔥 Go directly to download
+            // Go directly to download.html;
             window.location.href = "download.html";
         });
     });
 
-    // ===============================
-    // 5. PAID PRODUCTS (3 ITEMS)
-    // ===============================
+    // paid products (3 items);
     document.querySelectorAll(".btn-buy").forEach(btn => {
         btn.addEventListener("click", () => {
 
@@ -88,14 +78,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 price: parseFloat(btn.dataset.price)
             };
 
-            // ✅ Save selected product
+            // Save selected product
             localStorage.setItem("selectedProduct", JSON.stringify(product));
 
-            // ❗ Clear old payment data (important)
+            // Clear old payment data (important)
             localStorage.removeItem("paidProduct");
             localStorage.removeItem("paidOrderID");
 
-            // 🔥 Go to payment page
+            // Go to payment page
             window.location.href = "payment.html";
         });
     });
@@ -103,9 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// ===============================
-// OPTIONAL FUNCTION (REUSABLE)
-// ===============================
+// optional function (reuse);
 function buyProduct(id, name, price) {
     const product = { id, name, price };
 
