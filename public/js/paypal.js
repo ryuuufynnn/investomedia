@@ -74,6 +74,9 @@ async function handleSuccess(orderID) {
 
         if (result.success) {
             console.log("VERIFIED!");
+            if (result.token) {
+                localStorage.setItem("downloadToken", result.token);
+            }
 
             // slight delay para safe sa redirect
             setTimeout(() => {
@@ -139,6 +142,9 @@ waitForPaypal(() => {
 
             localStorage.setItem("paidProduct", JSON.stringify(product));
             localStorage.setItem("paidOrderID", data.orderID);
+            if (result.token) {
+                localStorage.setItem("downloadToken", result.token);
+            }
 
             window.location.href = "download.html";
         } else {

@@ -1,6 +1,7 @@
 // GET PRODUCT AND ORDER ID
 const product = JSON.parse(localStorage.getItem("paidProduct"));
 const orderID = localStorage.getItem("paidOrderID");
+const downloadToken = localStorage.getItem("downloadToken");
 
 const BACKEND_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
     ? "http://localhost:3000"
@@ -41,7 +42,9 @@ if (files[product.id]) {
         if (files[product.id].startsWith("http")) {
             window.location.href = files[product.id];
         } else {
-            window.location.href = `${BACKEND_URL}/download/${downloadParam}`;
+            const tokenQuery = downloadToken ? `?token=${encodeURIComponent(downloadToken)}` : "";
+            const productQuery = `&productId=${encodeURIComponent(product.id)}`;
+            window.location.href = `${BACKEND_URL}/download/${downloadParam}${tokenQuery}${productQuery}`;
         }
     });
 

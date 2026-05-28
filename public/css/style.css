@@ -85,7 +85,7 @@ nav {
 
 .hero-section {
     height: 85vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/public/img/products/background-for-hero.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/img/products/background-for-hero.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
